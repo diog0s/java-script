@@ -9,16 +9,23 @@
     <!-- <h1>Olá, <span id="nome"></span></h1> -->
     <h1>CNH</h1>
 
-    <input name="nome" placeholder="Seu Nome"/>
-    <input name="idade" placeholder="Sua idade"/>
+    <input type="text" name="nome" placeholder="Seu Nome"/>
+    <input type="number" name="idade" placeholder="Sua idade"/>
     <button type="button" onclick="verificarIdade()">Verificar idade</button>
 
     <script type="text/javascript">
         function verificarIdade(){
+            
             var nome = document.querySelector('input[name=nome]');
             var idade = document.querySelector('input[name=idade]');
-            console.log(nome.value);
-            console.log(idade.value);
+            console.log(typeof nome);
+            console.log(typeof idade);
+        
+            if(idade.value >= 18){
+                alert('OK, você pode tirar sua cnh');
+            }else{
+                alert('Você NÃO pode tirar sua cnh');
+            }
         }
         // var nome = prompt("Qual o seu nome?");
         // var recebeIdade = prompt("Informe a sua idade:");
